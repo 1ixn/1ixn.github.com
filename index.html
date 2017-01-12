@@ -7,7 +7,7 @@
     <meta name="description" content="1ixn.GitHub.com : ">
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
+    <link rel="stylesheet" href="editor.md/editormd.min.css" />
     <title>1ixn.GitHub.com</title>
   </head>
 
@@ -25,20 +25,40 @@
     </div>
 
     <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>Current Time</h1>
-    <div id="my_clock"></div>
-    <script type="text/javascript" src="javascripts/clock.js"></script>
-      </section>
+    <div id="editormd">
+    <textarea style="display:none;">### Hello Editor.md !</textarea>
     </div>
 
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
       <footer class="inner">
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
-      </footer>
+        <p>markdown工具</p>
+      <div id="main_content_wrap" class="outer">
+        <section id="main_content" class="inner">
+          <h1>Current Time</h1>
+          <div id="my_clock"></div>
+          <script type="text/javascript" src="javascripts/clock.js"></script>
+        </section>
+      </div>
+     </footer>
     </div>
+<script src="jquery.min.js"></script>
+<script src="editormd.min.js"></script>
+<script type="text/javascript">
+    $(function() {
+        var editor = editormd("editormd", {
+            path : "../lib/" // Autoload modules mode, codemirror, marked... dependents libs path
+        });
+
+        /*
+        // or
+        var editor = editormd({
+            id   : "editormd",
+            path : "../lib/"
+        });
+        */
+    });
+</script>
 
     
 
